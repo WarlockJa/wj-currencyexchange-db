@@ -1,0 +1,25 @@
+.loading {
+  height: 100vh;
+  //
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-bg-main);
+
+  .loading__spinnerWrapper {
+    padding: 3em 20em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--clr-font-main);
+    border-radius: 14px;
+    background-color: var(--clr-button-bg);
+  }
+
+  @media screen and (width < 700px) {
+    .loading__spinnerWrapper {
+      padding: 7em 0;
+    }
+  }
+}
