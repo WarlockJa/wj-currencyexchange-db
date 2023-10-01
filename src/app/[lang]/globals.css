@@ -57,14 +57,14 @@ input:focus-visible {
 
 .light {
   --clr-font-main: #342e3b;
-  --clr-bg-main: #a7a7a7;
+  --clr-bg-main: #ecf2ff;
   --clr-button-bg: #edeaff;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --clr-font-main: #342e3b;
-    --clr-bg-main: #a7a7a7;
+    --clr-bg-main: #ecf2ff;
     --clr-button-bg: #edeaff;
   }
 }
