@@ -5,7 +5,7 @@ import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
 
 // converting SSR into SSG
-export const revalidate = 864000;
+export const revalidate = 86400;
 
 export function generateStaticParams() {
   const languages = ["en", "ru"];
