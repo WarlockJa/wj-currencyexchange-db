@@ -26,7 +26,7 @@ export default async function Home(props: TURLProps) {
   // fetchign data  from the db
   const currencydata: TDBCurrencyData[] = await fetch(
     `${process.env.SITE_URL!}/api`,
-    { next: { revalidate: 3600 } }
+    { cache: "reload" }
   ).then((response) => response.json());
 
   // converting DB data into app format
