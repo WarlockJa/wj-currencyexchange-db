@@ -5,15 +5,15 @@ import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
 
 // converting SSR into SSG
-export const revalidate = 864000;
+// export const revalidate = 864000;
 
-export function generateStaticParams() {
-  const languages = ["en", "ru"];
+// export function generateStaticParams() {
+//   const languages = ["en", "ru"];
 
-  return languages.map((lang) => ({
-    lang,
-  }));
-}
+//   return languages.map((lang) => ({
+//     lang,
+//   }));
+// }
 
 export default async function Home(props: TURLProps) {
   // url params
@@ -26,7 +26,7 @@ export default async function Home(props: TURLProps) {
   // fetchign data  from the db
   const currencydata: TDBCurrencyData[] = await fetch(
     `${process.env.SITE_URL!}/api`,
-    { cache: "no-store" }
+    { cache: "reload" }
   ).then((response) => response.json());
 
   // converting DB data into app format
