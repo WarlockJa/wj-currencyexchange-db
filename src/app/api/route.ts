@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { prisma } from "../../../prisma/prisma";
 
+// adding to ensure SSR cache revalidation
+export const revalicate = 10;
+
 export async function GET() {
   try {
     // getting date 31 day in the past to use in DB query
