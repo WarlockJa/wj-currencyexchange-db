@@ -23,9 +23,10 @@ export default async function Home(props: TURLProps) {
 
   const dictionary = await getDictionary(lang);
 
-  // fetchign data  from the db
+  // fetching data  from the db
   const currencydata: TDBCurrencyData[] = await fetch(
-    `${process.env.SITE_URL!}/api`
+    `${process.env.SITE_URL!}/api`,
+    { cache: "no-store" }
   ).then((response) => response.json());
 
   // converting DB data into app format
