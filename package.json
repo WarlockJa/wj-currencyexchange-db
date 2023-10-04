@@ -8,14 +8,16 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.4.2",
     "@prisma/client": "^5.3.1",
     "date-fns": "^2.30.0",
     "negotiator": "^0.6.3",
-    "next": "latest",
+    "next": "^13.5.4",
+    "next-sitemap": "^4.2.3",
     "prisma": "^5.3.1",
     "react": "latest",
     "react-dom": "latest",
