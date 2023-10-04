@@ -5,15 +5,15 @@ import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
 
 // converting SSR into SSG
-// export const revalidate = 864000;
+export const revalidate = 864000;
 
-// export function generateStaticParams() {
-//   const languages = ["en", "ru"];
+export function generateStaticParams() {
+  const languages = ["en", "ru"];
 
-//   return languages.map((lang) => ({
-//     lang,
-//   }));
-// }
+  return languages.map((lang) => ({
+    lang,
+  }));
+}
 
 export default async function Home(props: TURLProps) {
   // url params
