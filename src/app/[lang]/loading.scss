@@ -8,6 +8,7 @@
   background-color: var(--clr-bg-main);
 
   .loading__spinnerWrapper {
+    max-width: var(--sz-max-width);
     padding: 3em 20em;
     display: flex;
     justify-content: center;

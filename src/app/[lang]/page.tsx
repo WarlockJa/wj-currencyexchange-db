@@ -3,6 +3,7 @@ import styles from "./page.module.scss";
 import { TCurrencyData, TDBCurrencyData, TURLProps } from "../../../types";
 import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
+import Loading from "./loading";
 
 // converting SSR into SSG
 export const revalidate = 864000;
@@ -32,6 +33,8 @@ export default async function Home(props: TURLProps) {
   // converting DB data into app format
   const convertedData: TCurrencyData = {};
   currencydata.map((item) => (convertedData[item.date] = item.data));
+
+  return <Loading theme="dark" />;
 
   return (
     <main className={`${styles.main} ${theme ? theme : ""}`}>
