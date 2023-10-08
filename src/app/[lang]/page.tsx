@@ -34,8 +34,6 @@ export default async function Home(props: TURLProps) {
   const convertedData: TCurrencyData = {};
   currencydata.map((item) => (convertedData[item.date] = item.data));
 
-  return <Loading theme="dark" />;
-
   return (
     <main className={`${styles.main} ${theme ? theme : ""}`}>
       <CurrencyExchange data={convertedData} dictionary={dictionary} />
