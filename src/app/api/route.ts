@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/../prisma/prisma";
 
 // adding for cache revalidation
-export const revalidate = 1;
+export const revalidate = 10;
 
 export async function GET() {
   try {
