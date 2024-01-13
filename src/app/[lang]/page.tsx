@@ -31,7 +31,7 @@ export default async function Home(props: TURLProps) {
   // fetching data from the db
   const currencydata: TDBCurrencyData[] = await fetch(
     `${process.env.SITE_URL}/api`,
-    { cache: "no-store", next: { tags: ["collection"] } }
+    { next: { tags: ["collection"] } }
   )
     .then((response) => response.json())
     .catch((error) => {
