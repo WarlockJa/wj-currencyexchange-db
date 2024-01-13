@@ -19,14 +19,12 @@ export default function convertAndValidateData(
   // Initialize an array to store common fields
   let commonFields = [];
 
-  // Get the keys of the first object
-  const firstObjectKeys = Object.keys(
-    convertedData[Object.keys(convertedData)[0]]
-  );
-  commonFields = firstObjectKeys;
+  // Get the keys of the data object
+  const dataKeys = Object.keys(convertedData[Object.keys(convertedData)[0]]);
+  commonFields = dataKeys;
 
-  // Iterate through the rest of the objects to filter common fields
-  // fields that are a number and fields found in the translation dictionary
+  // Iterate through the rest of the objects to filter common fields,
+  // fields that are a number, and fields found in the translation dictionary
   for (const date in convertedData) {
     commonFields = commonFields.filter(
       (field) =>
