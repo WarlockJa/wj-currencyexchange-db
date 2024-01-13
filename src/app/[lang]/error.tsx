@@ -5,7 +5,7 @@ const Error = ({
   reset,
 }: {
   theme: string;
-  error: Error & { digest?: string };
+  error: Error;
   reset: () => void;
 }) => {
   return (
