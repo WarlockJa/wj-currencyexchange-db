@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { TCurrenciesList, TDataEntry } from "@/types";
 
@@ -23,7 +22,7 @@ const useGetCurrencyOptions = ({
         ))
         .sort((a, b) => (a.props.children >= b.props.children ? 1 : -1))
     );
-  }, [dictionary]);
+  }, [dictionary, data]);
 
   return currencyOptions;
 };
