@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { prisma } from "../../../prisma/prisma";
+import { prisma } from "@/../prisma/prisma";
 
 // adding for cache revalidation
 export const revalidate = 10;

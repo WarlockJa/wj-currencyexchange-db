@@ -1,9 +1,6 @@
 // transforming api data into array used by graph
 
-import {
-  IDBCurrencyDataTransformResult,
-  TCurrencyData,
-} from "../../../../types";
+import { IDBCurrencyDataTransformResult, TCurrencyData } from "@/types";
 
 // correct performance tested at transformApiHistoricalDataToGraphFormat.test.ts
 const transformApiHistoricalDataToGraphFormat = (

@@ -1,9 +1,12 @@
 import { Locale } from "@/i18n-config";
 
+// data entry
+type TDataEntry = Record<string, number>;
+
 // data model from DB
 type TDBCurrencyData = {
   date: string;
-  data: Record<string, number>;
+  data: TDataEntry;
 };
 
 // data formatted for the app

@@ -1,4 +1,4 @@
-import Spinner from "./components/Spinner";
+import Spinner from "@/app/[lang]/components/Spinner";
 import "./loading.scss";
 
 const Loading = ({ theme }: { theme: string }) => {

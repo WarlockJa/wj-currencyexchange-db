@@ -1,4 +1,4 @@
-import transformApiHistoricalDataToGraphFormat from "../app/[lang]/utils/transformApiHistoricalDataToGraphFormat";
+import transformApiHistoricalDataToGraphFormat from "@/utils/transformApiHistoricalDataToGraphFormat";
 
 const inputData = {
   date1: {

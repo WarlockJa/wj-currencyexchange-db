@@ -11,10 +11,9 @@ import {
 } from "recharts";
 import "./currencyexchange.scss";
 import { useEffect, useMemo, useState } from "react";
-import useGetYesterdayDate from "../utils/useGetYesterdayDate";
-import useGetCurrencyOptions from "../utils/useGetCurrencyOptions";
-import transformApiHistoricalDataToGraphFormat from "../utils/transformApiHistoricalDataToGraphFormat";
-import { TCurrenciesList, TCurrencyData } from "../../../../types";
+import transformApiHistoricalDataToGraphFormat from "@/utils/transformApiHistoricalDataToGraphFormat";
+import { TCurrenciesList, TCurrencyData } from "@/types";
+import useGetCurrencyOptions from "@/utils/useGetCurrencyOptions";
 
 const CurrencyExchange = ({
   data,
@@ -23,8 +22,9 @@ const CurrencyExchange = ({
   data: TCurrencyData;
   dictionary: TCurrenciesList;
 }) => {
-  // getting yesterday date in format YYYY-MM-DD
-  const { yesterday } = useGetYesterdayDate(new Date().getDate());
+  // getting latest date in data
+  const dataKeys = Object.keys(data);
+  const yesterday = dataKeys[dataKeys.length - 1];
   // currency states
   const [firstCurrency, setFirstCurrency] = useState("USD");
   const [secondCurrency, setSecondCurrency] = useState("EUR");
@@ -32,7 +32,10 @@ const CurrencyExchange = ({
   const [firstCurrencyInput, setFirstCurrencyInput] = useState<string>("");
   const [secondCurrencyInput, setSecondCurrencyInput] = useState<string>("");
   // generating translated select options
-  const currencyOptions = useGetCurrencyOptions(dictionary);
+  const currencyOptions = useGetCurrencyOptions({
+    data: data[yesterday],
+    dictionary,
+  });
 
   // show exchange rate based on the data from api and value from input fields
   const handleExchange = (value: string, source: string) => {
